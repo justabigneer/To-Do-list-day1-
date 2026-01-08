@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="gurll.png" alt=" icon" class="header-icon">
+    <main class="app-container">
+        <header>
+            <h1>My To-Do List</h1>
+        </header>
+
+        <form id="task-form" class="todo-form" aria-labelledby="form-title">
+            <h2 id="form-title" class="visually-hidden">Add a new task</h2>
+
+            <label for="task-title">Task</label>
+            <input id="task-title" name="title" type="text" required maxlength="100" placeholder="Enter a task">
+
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label for="due">Due date</label>
+            <input id="due" name="dueDate" type="date" required>
+
+            <label for="category">Category</label>
+            <input id="category" name="category" type="text" placeholder="Optional">
+
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text" placeholder="Optional">
+
+            <button type="submit" id="add">Add Task</button>
+        </form>
+
+        <section aria-live="polite" id="todo-region">
+            <p id="empty-message">No tasks yet — add one above.</p>
+            <ul id="todolist" class="todo-list"></ul>
+        </section>
+
+        <template id="task-template">
+            <li class="task-item" data-id="">
+                <input type="checkbox" class="task-complete" id="task-checkbox-">
+                <label class="task-title" for="task-checkbox-"><span></span></label>
+                <small class="task-meta">
+                    <time class="task-due" datetime=""></time> • <span class="task-priority"></span>
+                </small>
+                <div class="task-actions">
+                    <button class="edit" aria-label="Edit task">Edit</button>
+                    <button class="delete" aria-label="Delete task">Delete</button>
+                </div>
+            </li>
+        </template>
+    </main>
+    <img src="pfp.png" alt="end icon" class="end-icon">
+    <script src="script.js"></script>
+</body>
+
+</html>
